@@ -7,6 +7,7 @@
 	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container">
 	  <a class="navbar-brand" href="#">TextCircle</a>
+	  <p class="navbar-text navbar-right"> {{> loginButtons align="right"}} </p>
 	  </div>
 	</nav>
 
@@ -14,18 +15,32 @@
   
 	<div class="container top-margin">
 		<h1>Welcome to TextCircle!</h1>
+		<div class="row">
+			<div class="col-md-6"> 
+				{{> editor}}
+			</div>
 
-		<div class="col-md-6"> 
-			{{> editor}}
+			<div class="col-md-6">
+				{{> viewer}}
+			</div>
 		</div>
 
-		<div class="col-md-6">
-			{{> viewer}}
+		<div class="row">
+			<div class="col-md-12">
+			{{> editingUsers}}
+			</div>
 		</div>
 	</div>
 
 
 </body>
+
+
+<template name="editingUsers">
+ 	{{#each users}}
+ 	{{firstname}}
+ 	{{/each}}
+</template>
 
 
 <template name="viewer">
